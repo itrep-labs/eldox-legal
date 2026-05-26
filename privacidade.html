@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Política de Privacidade · Eldox Campo</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="_style.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Política de Privacidade · Eldox Campo</h1>
+</header>
+<h1 id="política-de-privacidade-eldox-campo">Política de Privacidade ·
+Eldox Campo</h1>
+<p><strong>Última atualização:</strong> 25 de maio de 2026
+<strong>Versão:</strong> 1.0</p>
+<blockquote>
+<p>Este documento descreve como o aplicativo <strong>Eldox
+Campo</strong> (Android e iOS) e a plataforma <strong>Eldox</strong>
+tratam dados pessoais dos usuários, em conformidade com a <strong>Lei
+Geral de Proteção de Dados Pessoais</strong> (Lei 13.709/2018 — LGPD),
+os requisitos do <strong>Google Play Data Safety</strong> e da
+<strong>Apple App Privacy</strong>.</p>
+<p>Hospedar em URL pública (ex.:
+<code>https://eldox.com.br/privacidade</code>) e referenciar nas fichas
+das lojas. Adaptar nome/CNPJ/contato do controlador antes de
+publicar.</p>
+</blockquote>
+<hr />
+<h2 id="identidade-do-controlador">1. Identidade do Controlador</h2>
+<p><strong>Razão Social:</strong> Conexão Tecnologia e Serviços
+<strong>Marca:</strong> Eldox <strong>CNPJ:</strong> <em>(preencher
+antes de publicar)</em> <strong>Endereço:</strong> <em>(preencher antes
+de publicar)</em> <strong>E-mail do Encarregado (DPO):</strong>
+dpo@eldox.com.br <strong>Site:</strong> https://eldox.com.br</p>
+<p>A Conexão Tecnologia e Serviços (“nós”, “Eldox”) é a
+<strong>controladora</strong> dos dados pessoais coletados pelo Eldox
+Campo e pela plataforma Eldox Web, na forma do art. 5º, VI da LGPD.</p>
+<p>Quando o aplicativo é utilizado por funcionários de uma construtora
+(“Cliente Empresarial”), a relação é triádica: o Cliente Empresarial é
+também controlador dos dados de seus empregados/colaboradores, e a Eldox
+atua como operadora. Os dados de cada Cliente Empresarial são isolados
+em ambiente multi-tenant — não há cruzamento de dados entre empresas
+distintas.</p>
+<hr />
+<h2 id="quais-dados-pessoais-coletamos">2. Quais dados pessoais
+coletamos</h2>
+<h3 id="dados-fornecidos-pelo-usuário-no-cadastro-login">2.1. Dados
+fornecidos pelo usuário no cadastro / login</h3>
+<ul>
+<li><strong>Nome completo</strong> — identifica o autor das vistorias e
+ações no sistema.</li>
+<li><strong>E-mail corporativo</strong> — credencial de login e canal de
+comunicação.</li>
+<li><strong>Senha</strong> — armazenada com hash bcrypt; <strong>nunca
+em texto plano</strong>.</li>
+</ul>
+<h3 id="dados-coletados-automaticamente-pelo-uso">2.2. Dados coletados
+automaticamente pelo uso</h3>
+<ul>
+<li><strong>Identificador de sessão (JWT)</strong> — gerado no login
+para autenticar requisições.</li>
+<li><strong>Identificador do dispositivo (Device ID)</strong> — UUID
+anônimo gerado pelo app, persistido em armazenamento seguro do sistema
+operacional. Usado para identificar a família de tokens de refresh do
+dispositivo (ADR-010 da arquitetura).</li>
+<li><strong>Identificador do tenant (empresa)</strong> — a qual Cliente
+Empresarial o usuário pertence.</li>
+<li><strong>Logs de uso e diagnóstico</strong> — registros de operações
+realizadas no app (ex.: “ficha X executada por usuário Y em horário Z”)
+para auditoria PBQP-H e ISO 9001. Manter histórico completo é REQUISITO
+LEGAL para empresas certificadas.</li>
+</ul>
+<h3 id="conteúdo-gerado-pelo-usuário">2.3. Conteúdo gerado pelo
+usuário</h3>
+<ul>
+<li><strong>Respostas a checklists FVS</strong> (texto, números,
+escolhas).</li>
+<li><strong>Observações de inspeção</strong> (texto livre).</li>
+<li><strong>Fotos tiradas no canteiro</strong> durante a inspeção.
+Incluem timestamp.</li>
+<li><strong>Geolocalização aproximada</strong> (lat/lng) anexada às
+fotos, <strong>quando o usuário concede a permissão</strong>. Pode ser
+desabilitado nas configurações do dispositivo a qualquer momento.</li>
+</ul>
+<h3 id="o-que-não-coletamos">2.4. O que NÃO coletamos</h3>
+<ul>
+<li><strong>Histórico de navegação web</strong> — não rastreamos
+atividade fora do app/plataforma.</li>
+<li><strong>Lista de contatos</strong> — não acessamos.</li>
+<li><strong>Microfone</strong> — não gravamos áudio. O sistema Android
+pode listar <code>RECORD_AUDIO</code> como permissão (auto-declarada
+pela biblioteca de câmera); ela <strong>não é utilizada</strong> pelo
+app.</li>
+<li><strong>Identificadores publicitários</strong> — não coletamos.</li>
+<li><strong>Dados de saúde, financeiros ou de menores</strong> — não
+aplicável.</li>
+</ul>
+<hr />
+<h2 id="finalidades-do-tratamento">3. Finalidades do tratamento</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Finalidade</th>
+<th>Base legal LGPD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Autenticar o usuário e manter a sessão</td>
+<td>Execução de contrato (art. 7º, V)</td>
+</tr>
+<tr>
+<td>Permitir o registro de vistorias e não conformidades</td>
+<td>Execução de contrato</td>
+</tr>
+<tr>
+<td>Atender requisitos de auditoria PBQP-H / ISO 9001
+(rastreabilidade)</td>
+<td>Cumprimento de obrigação legal/regulatória (art. 7º, II)</td>
+</tr>
+<tr>
+<td>Sincronização de dados entre dispositivos do usuário</td>
+<td>Execução de contrato</td>
+</tr>
+<tr>
+<td>Suporte técnico e correção de bugs (via logs de erro)</td>
+<td>Legítimo interesse (art. 7º, IX)</td>
+</tr>
+<tr>
+<td>Geolocalização das fotos</td>
+<td>Consentimento (art. 7º, I), revogável a qualquer momento</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="compartilhamento-de-dados">4. Compartilhamento de dados</h2>
+<p>Os dados pessoais e o conteúdo do usuário são <strong>acessíveis
+apenas</strong>:</p>
+<ul>
+<li>Pelo próprio usuário em seu dispositivo</li>
+<li>Por outros usuários do <strong>mesmo Cliente Empresarial</strong>
+(multi-tenant — dados de empresa A nunca são visíveis para empresa
+B)</li>
+<li>Pela equipe técnica da Eldox, com finalidade exclusiva de suporte e
+manutenção, mediante registro de acesso</li>
+</ul>
+<p><strong>Não vendemos, alugamos nem compartilhamos dados com
+terceiros</strong> para fins publicitários ou comerciais.</p>
+<p>Subprocessadores utilizados (com finalidade técnica restrita):</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Subprocessador</th>
+<th>Finalidade</th>
+<th>Onde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hostinger / OCI</td>
+<td>Hospedagem do servidor de aplicação</td>
+<td>Brasil</td>
+</tr>
+<tr>
+<td>MinIO (storage S3-compatível)</td>
+<td>Armazenamento de fotos</td>
+<td>Brasil</td>
+</tr>
+<tr>
+<td>Expo (Application Services)</td>
+<td>Distribuição do app e atualizações OTA</td>
+<td>EUA</td>
+</tr>
+</tbody>
+</table>
+<p>Em todos os casos, há contrato com cláusulas de proteção de dados e
+os subprocessadores não acessam o conteúdo de negócio.</p>
+<hr />
+<h2 id="transferência-internacional">5. Transferência internacional</h2>
+<p>Eventual transferência de dados para o exterior (ex.: distribuição
+via Expo Application Services nos EUA) ocorre exclusivamente para fins
+técnicos e está coberta por contratos com cláusulas-padrão de proteção
+de dados, na forma do art. 33 da LGPD.</p>
+<hr />
+<h2 id="tempo-de-retenção">6. Tempo de retenção</h2>
+<ul>
+<li><strong>Conta de usuário e dados de identidade:</strong> mantidos
+enquanto o contrato com o Cliente Empresarial estiver ativo.</li>
+<li><strong>Histórico de vistorias, fotos e NCs:</strong> mantidos por
+<strong>5 anos após a conclusão da obra</strong> ou pelo prazo exigido
+pelo PBQP-H / ISO 9001 / contrato do Cliente Empresarial — o que for
+maior.</li>
+<li><strong>Logs de auditoria PBQP-H:</strong>
+<strong>append-only</strong> — não podem ser alterados ou excluídos por
+exigência regulatória, mesmo após a saída do usuário.</li>
+<li><strong>Após o término do contrato:</strong> dados pessoais são
+anonimizados ou excluídos no prazo de 90 dias, exceto os registros que
+precisam ser preservados por obrigação legal (item acima).</li>
+</ul>
+<hr />
+<h2 id="segurança-da-informação">7. Segurança da informação</h2>
+<ul>
+<li>Transmissão de dados protegida por <strong>TLS 1.2 ou
+superior</strong>.</li>
+<li>Senhas armazenadas com <strong>hash bcrypt</strong> (cost factor
+12).</li>
+<li>Tokens JWT com expiração curta + rotação de refresh tokens.</li>
+<li>Tokens armazenados no dispositivo via <strong>Keychain</strong>
+(iOS) e <strong>EncryptedSharedPreferences</strong> (Android), através
+do <code>expo-secure-store</code>.</li>
+<li>Banco de dados local do app criptografado em repouso pelo sistema
+operacional.</li>
+<li><strong>Isolamento multi-tenant rigoroso</strong> com
+<code>tenantId</code> em todas as queries (verificado por middleware
+<code>TenantGuard</code>).</li>
+<li>Logs de acesso e operações em produção monitorados.</li>
+</ul>
+<p>Apesar das melhores práticas adotadas, nenhuma transmissão pela
+Internet é 100% segura. Em caso de incidente, a Eldox notificará a ANPD
+e os titulares afetados conforme art. 48 da LGPD.</p>
+<hr />
+<h2 id="direitos-do-titular-dos-dados-lgpd-art.-18">8. Direitos do
+titular dos dados (LGPD art. 18)</h2>
+<p>Você pode, a qualquer momento, exercer os seguintes direitos:</p>
+<ul>
+<li><strong>Confirmar</strong> a existência de tratamento de seus
+dados</li>
+<li><strong>Acessar</strong> os dados pessoais que mantemos sobre
+você</li>
+<li><strong>Corrigir</strong> dados incompletos, inexatos ou
+desatualizados</li>
+<li><strong>Anonimizar, bloquear ou eliminar</strong> dados
+desnecessários ou tratados em desconformidade</li>
+<li><strong>Portar</strong> seus dados a outro fornecedor (em formato
+estruturado)</li>
+<li><strong>Eliminar</strong> os dados pessoais tratados com base em
+consentimento</li>
+<li><strong>Revogar consentimento</strong> específico (ex.:
+geolocalização) a qualquer momento</li>
+<li><strong>Opor-se</strong> a tratamento em desacordo com a LGPD</li>
+</ul>
+<p><strong>Como exercer:</strong> envie e-mail para
+<strong>dpo@eldox.com.br</strong> com seu nome, CPF (apenas para
+validação de identidade) e o pedido. Responderemos em até 15 dias
+corridos.</p>
+<p>Para usuários que receberam o app através de seu empregador (Cliente
+Empresarial), recomenda-se também encaminhar o pedido para o
+departamento responsável da própria construtora.</p>
+<hr />
+<h2 id="permissões-do-dispositivo">9. Permissões do dispositivo</h2>
+<h3 id="android">Android</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Permissão</th>
+<th>Por quê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CAMERA</code></td>
+<td>Tirar fotos das vistorias</td>
+</tr>
+<tr>
+<td><code>INTERNET</code></td>
+<td>Sincronizar com o servidor</td>
+</tr>
+<tr>
+<td><code>READ_EXTERNAL_STORAGE</code> /
+<code>WRITE_EXTERNAL_STORAGE</code></td>
+<td>Cache local de fotos antes de subir</td>
+</tr>
+<tr>
+<td><code>USE_BIOMETRIC</code></td>
+<td>Login rápido por biometria (opcional)</td>
+</tr>
+<tr>
+<td><code>ACCESS_FINE_LOCATION</code> /
+<code>ACCESS_COARSE_LOCATION</code></td>
+<td>Geotag de fotos (opcional, com consentimento)</td>
+</tr>
+<tr>
+<td><code>RECORD_AUDIO</code></td>
+<td><strong>Declarada pela biblioteca de câmera, mas não usada.</strong>
+Nenhum áudio é gravado, transmitido ou armazenado.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ios">iOS</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>String do Info.plist</th>
+<th>Por quê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NSCameraUsageDescription</code></td>
+<td>Tirar fotos das vistorias</td>
+</tr>
+<tr>
+<td><code>NSPhotoLibraryUsageDescription</code></td>
+<td>Anexar fotos da galeria às vistorias</td>
+</tr>
+<tr>
+<td><code>NSLocationWhenInUseUsageDescription</code></td>
+<td>Geotag opcional</td>
+</tr>
+<tr>
+<td><code>NSFaceIDUsageDescription</code></td>
+<td>Login rápido por Face ID (quando habilitado)</td>
+</tr>
+</tbody>
+</table>
+<p>Você pode revogar qualquer permissão a qualquer momento nas
+Configurações do seu dispositivo. O app continua funcionando com
+funcionalidade reduzida.</p>
+<hr />
+<h2 id="cookies-e-tecnologias-similares">10. Cookies e tecnologias
+similares</h2>
+<p>O aplicativo Eldox Campo <strong>não utiliza cookies</strong>. Tokens
+de autenticação são armazenados em armazenamento seguro do sistema
+operacional (Keychain/SecureStore), não em cookies.</p>
+<p>A plataforma web Eldox utiliza cookies estritamente necessários para
+a sessão do usuário (login). Não há cookies publicitários ou de
+rastreamento entre sites.</p>
+<hr />
+<h2 id="crianças-e-adolescentes">11. Crianças e adolescentes</h2>
+<p>O Eldox Campo é um aplicativo profissional destinado a maiores de 18
+anos no exercício de atividade laboral. <strong>Não coletamos
+intencionalmente dados de menores de idade.</strong> Caso identifiquemos
+que um menor utilizou o sistema, excluiremos os dados imediatamente.</p>
+<hr />
+<h2 id="alterações-nesta-política">12. Alterações nesta Política</h2>
+<p>Esta Política pode ser atualizada periodicamente. Mudanças relevantes
+serão comunicadas com pelo menos 30 dias de antecedência pelo e-mail
+cadastrado e por aviso no próprio aplicativo. A data da última
+atualização aparece no topo deste documento.</p>
+<hr />
+<h2 id="encarregado-de-proteção-de-dados-dpo">13. Encarregado de
+Proteção de Dados (DPO)</h2>
+<p><strong>E-mail:</strong> dpo@eldox.com.br <strong>Prazo de
+resposta:</strong> até 15 dias corridos</p>
+<p>Caso entenda que a Eldox não atendeu adequadamente sua solicitação,
+você tem o direito de apresentar reclamação à <strong>Autoridade
+Nacional de Proteção de Dados (ANPD)</strong>: - Site:
+https://www.gov.br/anpd - E-mail: comunicacao@anpd.gov.br</p>
+<hr />
+<h2 id="lei-aplicável-e-foro">14. Lei aplicável e foro</h2>
+<p>Esta Política é regida pela legislação brasileira. Eventuais disputas
+serão dirimidas no foro do domicílio do titular, na forma do art. 101, I
+do Código de Defesa do Consumidor, quando aplicável, ou no foro da
+Comarca de <em>(preencher cidade-sede)</em>, nos demais casos.</p>
+<hr />
+<p><strong>Conexão Tecnologia e Serviços</strong> <strong>Eldox ·
+Plataforma de Gestão de Obras</strong> https://eldox.com.br</p>
+<hr><a style="color:#666;text-decoration:none" href="./">← voltar</a></body>
+</html>
